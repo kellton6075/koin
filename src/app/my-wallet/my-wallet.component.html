@@ -1,3 +1,16 @@
-<p>
-  my-wallet works!
-</p>
+<div class="app-header card-header ng-isolate-scope" page-title="pageTitle" wallet-data="walletData" bitcoin-prices="bitcoinPrices" settings="settings" display-price="isDoneFetchingPrice">
+    <div class="row">
+        <div class="col-xs-4">
+            <h1 class="pageTitle ng-binding pull-left">Transactions</h1>
+        </div>
+
+        <div class="col-xs-8">
+            <div class="text-right app-header-right">
+                <h1 class="ng-binding">
+                    0.00000000 Koin
+                    <!-- ngIf: !!displayPrice --><small ng-if="!!displayPrice" class="ng-binding ng-scope">≃  €0.00</small><!-- end ngIf: !!displayPrice -->
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
