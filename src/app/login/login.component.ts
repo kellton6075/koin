@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,5 @@ export class LoginComponent implements OnInit {
     public router: Router) { }
 
   ngOnInit() {
-  }
-
-  goToSignUpPage(): void {
-    this.router.navigate(['sign-up']);
   }
 }
