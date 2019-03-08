@@ -41,19 +41,19 @@
             <ul class="nav navbar-nav side-nav">
               <a href="#"><img class="logostyle" src="../../assets/user-icon.jpg"></a>
                 <li>
-                   <a class="active" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-home" aria-hidden="true"></i>   <span style="color:white;">  My Wallet </span></a>
+                   <a class="active" (click)="pageTitle='My Wallet'" routerLink="/dashboard/my-wallet" data-toggle="collapse" ><i class="fa fa-home" aria-hidden="true"></i>   <span style="color:white;">  My Wallet </span></a>
                 </li>
                 <li>
-                    <a class="#" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-mail-forward" aria-hidden="true"></i>   <span style="color:white;">  Send </span></a>
+                    <a class="#" (click)="pageTitle='Send Koin'" routerLink="/dashboard/send" data-toggle="collapse" ><i class="fa fa-mail-forward" aria-hidden="true"></i>   <span style="color:white;">  Send </span></a>
                 </li>
                 <li>
-                    <a class="#" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-mail-reply" aria-hidden="true"></i>   <span style="color:white;"> Receive </span></a>
+                    <a class="#" (click)="pageTitle='Receive Koin'" routerLink="/dashboard/receive" data-toggle="collapse" ><i class="fa fa-mail-reply" aria-hidden="true"></i>   <span style="color:white;"> Receive </span></a>
                 </li>
                 <li>
-                    <a class="#" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa  fa-credit-card" aria-hidden="true"></i>  <span style="color:white;"> Buy </span></a>
+                    <a class="#" (click)="pageTitle='Buy Koin'" routerLink="/dashboard/buy-koin" data-toggle="collapse" ><i class="fa  fa-credit-card" aria-hidden="true"></i>  <span style="color:white;"> Buy </span></a>
                 </li>
                 <li>
-                    <a class="#" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-cogs" aria-hidden="true"></i>   <span style="color:white;"> Settings </span></a>
+                    <a class="#" (click)="pageTitle='Settings'" data-toggle="collapse"><i class="fa fa-cogs" aria-hidden="true"></i>   <span style="color:white;"> Settings </span></a>
                 </li>
             </ul>
         </div>
@@ -61,10 +61,11 @@
   </nav>
 
 
-<div class="container-fluid">
+<div style="margin-top: 6%;" class="container-fluid">
 <div class="row text-center">
 <div class="col-md-12 dashhead">
-<h1> Welcome To My ProFile</h1>
+<h1> {{ pageTitle }}</h1>
+<router-outlet></router-outlet>
 </div>
 </div>
 </div>
