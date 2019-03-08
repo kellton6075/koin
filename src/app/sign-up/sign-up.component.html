@@ -7,15 +7,15 @@
         <div class="middle">
             <div id="login">
         
-              <form action="javascript:void(0);" method="get">
+              <form [formGroup]="signUpForm" (ngSubmit)="submitRegister()">
         
                 <fieldset class="clearfix">
         
-                  <p ><span class="fa fa-user"></span><input type="text"  Placeholder="Email" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
-                  <p><span class="fa fa-lock"></span><input type="password"  Placeholder="Password" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+                  <p ><span class="fa fa-user"></span><input formControlName="email" type="text"  Placeholder="Email" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                  <p><span class="fa fa-lock"></span><input formControlName="password" type="password"  Placeholder="Password" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
                   
                    <div>
-                                      <span style="width:50%; text-align:left;  display: inline-block;"><input type="submit" value="Sign Up"></span>
+                                      <span style="width:50%; text-align:left;  display: inline-block;"><input class="btn btn-info" type="submit" value="Sign Up" [disabled]="signUpForm.invalid"></span>
                                   </div>
         
                 </fieldset>
