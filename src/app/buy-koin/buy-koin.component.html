@@ -1,3 +1,76 @@
-<p>
-  buy-koin works!
-</p>
+<div class="card">
+    <div class="card header">
+      <div class="row">
+        <div class="col-xs-4">
+          <h1 class="pageTitle ng-binding">Buy Bitcoin</h1>
+        </div>
+        <div class="col-xs-8">
+          <div class="text-right">
+            <h1 class="ng-binding">
+              0.00000000 Bitcoin
+              <small ng-if="!!displayPrice" class="ng-binding ng-scope">≃ €0.00</small><!-- end ngIf: !!displayPrice -->
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div>
+        <div>
+          <form>
+            <div class="row">
+              <div class="col-xs-12">
+                  <h1>Buy with Credit Card</h1>
+                <div class="form-group form-group-lg" ng-class="{'has-error': errors.recipient}">
+                  <label class="control-label" for="recipient">
+                    <span class="sentence-case ng-binding">
+                      <h3>Card Holder Name</h3>
+                    </span>
+                  </label>
+                  <div class="input-group input-group-lg">
+                    <input id="recipient" name="recipient"
+                      class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" type="text"
+                      placeholder="Card Holder Name" autocomplete="off" required="" ng-model="sendInput.recipientAddress"
+                      ng-disabled="sendInput.inputDisabled" ng-focus="resetError('recipient')"
+                      ng-blur="validateAddress()">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <!-- Amount -->
+                <div class="form-group form-group-lg" ng-class="{'has-error':errors.amount}">
+  
+                  <h3>Card Number</h3>
+  
+                  <div class="input-group input-group-lg">
+                    <input id="amount" name="amount"
+                      class="form-control ng-pristine ng-untouched ng-valid-min ng-invalid ng-invalid-required"
+                      placeholder="4111 1111 1111 1111" autocomplete="off" required=""
+                      ng-model="sendInput.amount" ng-disabled="sendInput.inputDisabled"
+                      ng-change="setAltCurrency(); fetchFee();" ng-focus="resetError('amount')">
+                    
+                    
+                  </div>
+                  <span class="help help-block text-danger">
+                    <!-- ngIf: errors.amount -->
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group form-group-lg form-group-buttons">
+                        <button class="btn btn-lg btn-primary" ng-click="onSubmitFormSend()">
+                            <span class="ng-binding">&nbsp;&nbsp; Buy &nbsp;&nbsp;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
