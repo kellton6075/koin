@@ -1,7 +1,7 @@
     <div class="card-header">
       <div class="row">
         <div class="col-xs-4">
-          <h1 class="pageTitle ng-binding pull-left">Buy Koin</h1>
+          <h1 class="pageTitle ng-binding pull-left">Wallet Balance</h1>
         </div>
         <div class="col-xs-8">
           <div class="text-right">
@@ -13,17 +13,17 @@
         </div>
       </div>
     </div>
+    <h2 style="text-align: left;"> Buy Koin's here!</h2>
     <div style="padding: 20px;" id="form-olvidado">
-        <form accept-charset="UTF-8" role="form" id="login-form" method="post">
-            <fieldset>
-            
-              <label style="text-align:left;"><strong>Amount</strong></label>
+        <!-- <form accept-charset="UTF-8" role="form" id="login-form" method="post"> -->
+            <fieldset>            
+              <label style="text-align:left;"><strong>Amount in USD</strong></label>
               <div class="form-group input-group">
-                <input class="form-control" placeholder="0.00000" type="number" style="height:40px">
+                <input #usd class="form-control" (keydown)="calculateKoin(usd.value)" placeholder="0.00000" type="number" style="height:40px">
               </div>
-              <label style="text-align:left;"><strong>Amount</strong></label>
+              <label style="text-align:left;"><strong>Equivalent Koin</strong></label>
               <div class="form-group input-group">
-                <input class="form-control" placeholder="0.00000" type="number" style="height:40px">
+                <input class="form-control" [(ngModel)]="koins" placeholder="0.00000" type="number" style="height:40px">
               </div>
               <label style="text-align:left;"><strong>Card Holder Name</strong></label>
               <div class="form-group input-group">
@@ -39,5 +39,5 @@
                 </button>       
               </div>
             </fieldset>
-        </form>
+        <!-- </form> -->
     </div>
