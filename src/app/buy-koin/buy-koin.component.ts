@@ -9,7 +9,14 @@ export class BuyKoinComponent implements OnInit {
 
   constructor() { }
 
+  oneBitcoinValue = 3848;
+  koins;
   ngOnInit() {
   }
 
+  calculateKoin(moneyInDollar): void {
+    console.log("hello");
+    
+    this.koins = moneyInDollar/this.oneBitcoinValue;
+  }
 }
