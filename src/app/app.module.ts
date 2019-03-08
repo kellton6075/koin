@@ -8,13 +8,17 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommonService } from './common.service';
+import { SendReceiveKoinComponent } from './send-receive-koin/send-receive-koin.component';
+import { BuyKoinComponent } from './buy-koin/buy-koin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    DashboardComponent
+    DashboardComponent,
+    SendReceiveKoinComponent,
+    BuyKoinComponent
   ],
   imports: [
     BrowserModule,
