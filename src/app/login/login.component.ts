@@ -37,6 +37,10 @@ export class LoginComponent implements OnInit {
     this.commonService.loginUser(this.loginForm.value).subscribe(
       res => {
         if (res.status !== 'FAILURE') {
+          window.localStorage.setItem('token', res.data.token);
+          console.log(window.localStorage.getItem('token'), "tokeen");
+          window.localStorage.setItem('email', this.loginForm.value.email);
+
           this.router.navigate(['dashboard']);
         } else {
           alert('Invalid Credentials');

@@ -33,15 +33,16 @@ export class SignUpComponent implements OnInit {
       });
     }
     submitRegister(): void {
-      console.log("dshufhgjsdfjhf");
-      
       this.commonService.signUpUser(this.signUpForm.value).subscribe(
         res => {
           if (res.status !== 'FAILURE') {
             this.commonService.loginUser(this.signUpForm.value).subscribe(
               resLogin => {
                 if (resLogin.status !== 'FAILURE') {
-                  setTimeout(() => this.router.navigate(['dashboard']), 1000);
+                  window.localStorage.setItem('token', res.data.token);
+                  console.log(window.localStorage.getItem('token'), "tokeen");
+                  window.localStorage.setItem('email', this.loginForm.value.email);
+                  this.router.navigate(['dashboard']);
                   // this.router.navigate(['dashboard']);
                 } else {
                   alert('Invalid Credentials');

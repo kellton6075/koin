@@ -29,22 +29,22 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Operation date</th>
-                                    <th>Remitter</th>
-                                    <th>Beneficiary</th>
-                                    <th>Amount</th>
-                                    <th>Description</th>
+                                    <th>Transaction Date</th>
+                                    <th>Sender</th>
+                                    <th>Receiver</th>
+                                    <th>koins</th>
+                                    <th>Transaction Type</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Wed Nov 12 17:43:13 MSK 2014</td>
-                                    <td>Smith J. (cash in)</td>
-                                    <td>Jonex A.</td>
-                                    <td>356.61</td>
-                                    <td>Iniital deposit</td>
+                                <tr *ngFor="let data of transactionData">
+                                    <td>Sat Feb 9</td>
+                                    <td>{{data.from}}</td>
+                                    <td>{{data.to}}</td>
+                                    <td>{{data.coin}}</td>
+                                    <td>{{ userEmail === data.fromUserId.email ? 'Send' : 'Receive'}}</td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td>Wed Nov 13 12:41:13 MSK 2014</td>
                                     <td>Suzarland TJ.</td>
                                     <td>Smith J.</td>
@@ -57,7 +57,7 @@
                                     <td>Smith M.</td>
                                     <td>100.00</td>
                                     <td>funds transfer</td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                         </li>
