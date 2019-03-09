@@ -8,6 +8,9 @@ import { CommonService } from './../common.service';
 export class MyWalletComponent implements OnInit {
   userEmail;
   transactionData;
+  walletBalance;
+  oneBitcoinValue = 3848;
+  ruppess;
   constructor(private commonService: CommonService) { }
 
   ngOnInit() {
@@ -31,6 +34,8 @@ export class MyWalletComponent implements OnInit {
   getUserWallet(): void {
     this.commonService.getUserData().subscribe(
       res => {
+        this.walletBalance = res.data.coin;
+        this.ruppess = this.oneBitcoinValue * this.walletBalance;
 
         console.log(res);
         
