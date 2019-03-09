@@ -39,7 +39,7 @@ export class SignUpComponent implements OnInit {
             this.commonService.loginUser(this.signUpForm.value).subscribe(
               resLogin => {
                 if (resLogin.status !== 'FAILURE') {
-                  window.localStorage.setItem('token', res.data.token);
+                  window.localStorage.setItem('token', resLogin.data.token);
                   console.log(window.localStorage.getItem('token'), "tokeen");
                   window.localStorage.setItem('email', this.signUpForm.value.email);
                   this.router.navigate(['dashboard']);
